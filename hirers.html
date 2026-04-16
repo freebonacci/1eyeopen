@@ -71,11 +71,12 @@
     /* NAVBAR */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-      padding: 1rem 3rem;
+      padding: 1rem 1.5rem;
       background: rgba(17,20,22,0.6);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--outline-variant);
     }
+    @media (min-width: 768px) { nav { padding: 1rem 3rem; } }
     .nav-inner {
       width: 100%; max-width: 1280px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
@@ -173,7 +174,7 @@
     }
     .bar-ignore { background: rgba(255,255,255,0.15); width: 10%; }
     .bar-open { background: var(--sage); width: 5%; min-width: 4px; }
-    .bar-irrelevant { background: rgba(255,255,255,0.06); width: 42%; }
+    .bar-irrelevant { background: rgba(255,255,255,0.06); width: 60%; }
     .bar-label {
       font-size: 11px; color: var(--on-surface-variant);
     }
@@ -418,14 +419,14 @@
   </div>
 
   <!-- Market Split Visual - centered below hero -->
-  <div style="max-width:520px;margin:3rem auto 0;padding:0 1.5rem;">
+  <div style="max-width:600px;margin:3rem auto 0;padding:0 1.5rem;">
     <div class="market-visual glass">
       <span class="market-label">The talent market, broken down</span>
       <div class="market-bar-wrap">
         <div class="market-bar-row">
           <span class="bar-pct">10%</span>
           <div class="market-bar bar-ignore"></div>
-          <span class="bar-label">Good fit, but not looking to move</span>
+          <span class="bar-label">Good fit, not looking to move</span>
         </div>
         <div class="market-bar-row">
           <span class="bar-pct">5%</span>
