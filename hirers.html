@@ -165,17 +165,17 @@
       color: var(--on-surface-variant); margin-bottom: 0.5rem;
       font-weight: 600;
     }
-    .market-bar-wrap { display: flex; flex-direction: column; gap: 0.4rem; }
+    .market-bar-wrap { display: flex; flex-direction: column; gap: 0.4rem; max-width: 480px; }
     .market-bar-row { display: flex; align-items: center; gap: 0.75rem; }
     .market-bar {
-      height: 6px; border-radius: 1px;
+      height: 6px; border-radius: 1px; flex-shrink: 0;
       transition: width 1s ease;
     }
     .bar-ignore { background: rgba(255,255,255,0.15); width: 10%; }
     .bar-open { background: var(--sage); width: 5%; min-width: 4px; }
-    .bar-irrelevant { background: rgba(255,255,255,0.06); width: 85%; }
+    .bar-irrelevant { background: rgba(255,255,255,0.06); width: 42%; }
     .bar-label {
-      font-size: 11px; color: var(--on-surface-variant); white-space: nowrap;
+      font-size: 11px; color: var(--on-surface-variant);
     }
     .bar-pct { font-size: 11px; color: #fff; font-weight: 500; min-width: 2rem; }
     .market-insight {
@@ -242,8 +242,8 @@
 
     /* FLOWCHART */
     .flow { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
-    .flow-row-2 { display: grid; gap: 1rem; width: 100%; position: relative; }
-    @media (min-width: 768px) { .flow-row-2 { grid-template-columns: 1fr 1fr; gap: 6rem; } }
+    .flow-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; position: relative; }
+    @media (min-width: 768px) { .flow-row-2 { gap: 6rem; } }
     .flow-persona { display: flex; flex-direction: column; align-items: center; }
     .flow-persona-label { display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem; }
     .flow-icon-sm {
@@ -257,8 +257,9 @@
     .arrow-down svg { width: 1rem; height: 1rem; }
     .flow-card {
       display: flex; flex-direction: column; align-items: center; text-align: center;
-      padding: 1.5rem; border-radius: 2px; width: 100%; max-width: 20rem;
+      padding: 0.75rem; border-radius: 2px; width: 100%;
     }
+    @media (min-width: 768px) { .flow-card { padding: 1.5rem; max-width: 20rem; } }
     .flow-icon-lg {
       width: 3rem; height: 3rem; border-radius: 50%;
       background: var(--sage-dim); border: 1px solid rgba(183,204,187,0.2);
@@ -270,8 +271,7 @@
     .flow-icon-lg.highlight svg { color: var(--sage-dim); }
     .flow-card h4 { font-size: 1.1rem; font-style: italic; margin-bottom: 0.75rem; }
     .flow-card p { font-size: 0.875rem; color: var(--on-surface-variant); line-height: 1.7; }
-    .flow-plus { display: none; position: absolute; left: 50%; top: 62%; transform: translate(-50%, -50%); color: rgba(183,204,187,0.35); }
-    @media (min-width: 768px) { .flow-plus { display: flex; } }
+    .flow-plus { display: flex; position: absolute; left: 50%; top: 62%; transform: translate(-50%, -50%); color: rgba(183,204,187,0.35); }
     .flow-plus svg { width: 1.5rem; height: 1.5rem; }
     .flow-connector { display: flex; justify-content: center; width: 100%; max-width: 37rem; position: relative; height: 3rem; }
     .flow-connector-h { position: absolute; left: 25%; right: 25%; top: 0; height: 1px; background: rgba(183,204,187,0.2); }
@@ -417,20 +417,20 @@
     </div>
   </div>
 
-  <!-- Market Split Visual - full width below -->
-  <div style="max-width:1280px;margin:3rem auto 0;">
+  <!-- Market Split Visual - centered below hero -->
+  <div style="max-width:520px;margin:3rem auto 0;padding:0 1.5rem;">
     <div class="market-visual glass">
       <span class="market-label">The talent market, broken down</span>
       <div class="market-bar-wrap">
         <div class="market-bar-row">
           <span class="bar-pct">10%</span>
           <div class="market-bar bar-ignore"></div>
-          <span class="bar-label">Relevant, but heads down & not looking to move</span>
+          <span class="bar-label">Good fit, but not looking to move</span>
         </div>
         <div class="market-bar-row">
           <span class="bar-pct">5%</span>
           <div class="market-bar bar-open"></div>
-          <span class="bar-label" style="color:var(--sage)">Relevant, not actively applying but open to the right move</span>
+          <span class="bar-label" style="color:var(--sage)">Good fit, won't apply but open to being approached</span>
         </div>
         <div class="market-bar-row">
           <span class="bar-pct">85%</span>
@@ -438,7 +438,7 @@
           <span class="bar-label">Irrelevant</span>
         </div>
       </div>
-      <p class="market-insight">Most outreach hits the <span>10%</span> — the people who will never respond.<br>We give you access to the <span>5%</span> who are open to a change.</p>
+      <p class="market-insight">Most outreach hits the <span>10%</span> — the people who will never respond.<br>We give you access to the <span>5%</span> who are not actively applying, but are open to a change.</p>
     </div>
   </div>
 </section>
