@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Eye Open — Our Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b7ccbb' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX7R2P9YDP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WX7R2P9YDP');
+  </script>
+  <!-- Content Square -->
+  <script src="https://t.contentsquare.net/uxa/f4acdcc668893.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage: #b7ccbb;
+      --sage-dim: #324438;
+      --background: #0c0e10;
+      --surface: #111416;
+      --surface-container: #161a1e;
+      --outline-variant: rgba(255,255,255,0.1);
+      --on-surface-variant: rgba(255,255,255,0.6);
+      --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-serif: "Newsreader", serif;
+    }
+
+    html { font-size: 14px; scroll-behavior: smooth; }
+    body {
+      background: var(--background);
+      color: #fff;
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 300; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim-fade-up { animation: fadeUp 0.8s ease forwards; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      padding: 1rem 1.5rem;
+      background: rgba(17,20,22,0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    @media (min-width: 768px) { nav { padding: 1rem 3rem; } }
+    .nav-inner {
+      width: 100%; max-width: 1280px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-back {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--on-surface-variant);
+      text-decoration: none; transition: color 0.2s;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-back:hover { color: var(--sage); }
+    svg { display: inline-block; vertical-align: middle; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* MAIN CONTENT */
+    main {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 8rem 1.5rem 6rem;
+    }
+    @media (min-width: 768px) { main { padding: 10rem 3rem 6rem; } }
+
+    .letter-wrap {
+      max-width: 42rem;
+      width: 100%;
+    }
+
+    /* LETTER LABEL */
+    .letter-label {
+      display: block; color: var(--sage);
+      font-size: 9px; letter-spacing: 0.4em;
+      text-transform: uppercase; font-weight: 600;
+      opacity: 0.8; margin-bottom: 3rem;
+    }
+
+    /* LETTER BODY */
+    .letter-body {
+      font-family: var(--font-serif);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.9;
+      color: rgba(255,255,255,0.85);
+    }
+    .letter-body p { margin-bottom: 1.75rem; }
+    .letter-body p:last-of-type { margin-bottom: 0; }
+
+    /* BULLET LIST */
+    .letter-list {
+      list-style: none;
+      margin: 0 0 1.75rem 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .letter-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .letter-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--sage); flex-shrink: 0;
+      margin-top: 0.65rem;
+    }
+    .letter-list p {
+      margin: 0;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* SIGNOFF */
+    .letter-signoff {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--outline-variant);
+    }
+    .signoff-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .signoff-link {
+      font-size: 10px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--on-surface-variant);
+      text-decoration: none; transition: color 0.2s;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .signoff-link:hover { color: var(--sage); }
+    .signoff-link svg { width: 0.75rem; height: 0.75rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--surface); padding: 3rem 1.5rem;
+      border-top: 1px solid var(--outline-variant);
+    }
+    @media (min-width: 768px) { footer { padding: 3rem 3rem; } }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
+    .footer-copy { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-surface-variant); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-link { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-surface-variant); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--sage); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="./index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" style="color:var(--sage)">
+        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </a>
+    <a href="./index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" width="14" height="14"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back
+    </a>
+  </div>
+</nav>
+
+<!-- LETTER -->
+<main>
+  <div class="letter-wrap anim-fade-up">
+    <span class="letter-label">Our Story</span>
+    <div class="letter-body">
+      <p>Hi there,</p>
+      <p>Thanks for stopping by.</p>
+      <p>We started One Eye Open because we noticed lots of our friends in difficult situations. Many found themselves stuck in jobs they didn't want to be doing, hoping for something more meaningful. Many don't have the time to apply for roles, and hate being performative on LinkedIn. On this journey we've spoken to more experienced people deeply worried about layoffs, who haven't applied to a job in decades, and now find themselves unsure about how to start looking.</p>
+      <p>The crazy thing is, at the same time, we've spoken to plenty of hiring companies who are struggling too — people ignore most of their recruitment (which is badly targeted), they're flooded by applications they can't handle, and a bad hire is an expensive mistake.</p>
+      <p>We think the use of AI in recruitment has become a race to the bottom — AI is building CVs that say everything and nothing, while companies use AI to handle the volume they're facing.</p>
+      <p>How does One Eye Open change this?</p>
+      <ul class="letter-list">
+        <li>
+          <div class="letter-dot"></div>
+          <p>It encourages the market to move — less people in jobs they don't want, more movement is good for everyone.</p>
+        </li>
+        <li>
+          <div class="letter-dot"></div>
+          <p>It allows people to be found by hirers without risking their current role. You shouldn't have to risk your job to signal a desire for something more.</p>
+        </li>
+        <li>
+          <div class="letter-dot"></div>
+          <p>No more tailored CVs — the idea that you have an AI inserting keywords into each CV you apply with means no one learns anything from a CV anymore. Instead, we think a CV that is human authored and tells the truth is going to lead to happier outcomes. We don't want to use AI to replace human voice, we want it to match.</p>
+        </li>
+      </ul>
+      <p>If you believe in our mission, we'd like to invite you to join us. Modern recruiting is a nightmare, and we all deserve better.</p>
+      <p>Sincerely,<br>Ben and Josh</p>
+    </div>
+
+    <div class="letter-signoff reveal">
+      <div class="signoff-links">
+        <a href="https://benfreeborn.com/" target="_blank" class="signoff-link">
+          Ben Freeborn
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/josh-routley-949333228/" target="_blank" class="signoff-link">
+          Josh Routley
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <svg width="26" height="26" viewBox="0 0 24 24" style="color:var(--sage);opacity:0.8;margin-bottom:0.5rem;display:block;">
+        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+      <p class="footer-copy">© 2026 One Eye Open. All Rights Reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="./index.html" class="footer-link">For Candidates</a>
+      <a href="./hirers.html" class="footer-link">For Hirers</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
