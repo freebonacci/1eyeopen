@@ -81,6 +81,7 @@
       width: 100%; max-width: 1280px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center;
     }
+    @media (min-width: 1280px) { nav { padding-left: calc((100vw - 1280px) / 2 + 3rem); padding-right: calc((100vw - 1280px) / 2 + 3rem); } }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
     .nav-logo svg { color: var(--sage); }
     .nav-back {
@@ -625,8 +626,8 @@
 <script>
   const { createClient } = supabase;
   const client = createClient(
-    'https://zgbkdmkrodqggogvmytm.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnYmtkbWtyb2RxZ2dvZ3ZteXRtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNTcyOTIsImV4cCI6MjA5MTgzMzI5Mn0.0RkeFazfPV-AqfAiJBsNHu7v0YlMP9CLSReG46tgvF4'
+    'https://yycbyiycrbeiwergvxwx.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl5Y2J5aXljcmJlaXdlcmd2eHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYzMzg4MjUsImV4cCI6MjA5MTkxNDgyNX0.fPd1S2U-NSUPfzyEOv1qZO1pFb_pxE5P1ybf-QEa3wg'
   );
 
   async function handleSubmit() {
